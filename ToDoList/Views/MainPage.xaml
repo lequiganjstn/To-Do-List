@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ToDoList.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MainPage">
+    <ScrollView>
+        <Grid RowDefinitions="15*, 10*, 60*, 15*">
+            <Border
+                Grid.Row="0"
+                BackgroundColor="LightBlue"
+                Stroke="Black">
+
+                <Label
+                    Grid.Row="0"
+                    FontFamily="InstrumentSerifRegular"
+                    FontSize="32"
+                    HorizontalOptions="Center"
+                    Text="TO-DO List"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </Border>
+
+            <Border
+                Grid.Row="1"
+                BackgroundColor="LightSteelBlue"
+                Stroke="Black" />
+
+            <ListView Grid.Row="2" BackgroundColor="White" />
+
+            <Border
+                Grid.Row="3"
+                BackgroundColor="LightBlue"
+                Stroke="Black" />
+        </Grid>
+    </ScrollView>
+</ContentPage>
