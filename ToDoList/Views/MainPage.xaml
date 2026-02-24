@@ -4,11 +4,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="MainPage">
-    <ScrollView>
+    <ScrollView BackgroundColor="#E4F3FF">
         <Grid RowDefinitions="15*, 10*, 60*, 15*">
             <Border
                 Grid.Row="0"
-                BackgroundColor="LightBlue"
+                BackgroundColor="#90D5FF"
                 Stroke="Black">
 
                 <Label
@@ -23,14 +23,23 @@
 
             <Border
                 Grid.Row="1"
-                BackgroundColor="LightSteelBlue"
-                Stroke="Black" />
+                BackgroundColor="#00B2EB"
+                Stroke="Black">
 
-            <ListView Grid.Row="2" BackgroundColor="White" />
+                <SearchBar
+                    x:Name="taskSearchBar"
+                    HorizontalOptions="Fill"
+                    Placeholder="Search Task"
+                    SearchButtonPressed="taskSearchBar_SearchButtonPressed"
+                    TextChanged="taskSearchBar_TextChanged"
+                    TextColor="Black" />
+            </Border>
+
+            <ListView x:Name="taskList" Grid.Row="2" />
 
             <Border
                 Grid.Row="3"
-                BackgroundColor="LightBlue"
+                BackgroundColor="#90D5FF"
                 Stroke="Black" />
         </Grid>
     </ScrollView>

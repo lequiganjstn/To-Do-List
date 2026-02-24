@@ -6,4 +6,14 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void taskSearchBar_SearchButtonPressed(object sender, EventArgs e)
+    {
+
+    }
+
+    private void taskSearchBar_TextChanged(object sender, TextChangedEventArgs e)
+    {
+
+    }
 }
