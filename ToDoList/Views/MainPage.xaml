@@ -3,58 +3,58 @@
     x:Class="ToDoList.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="MainPage">
-    <ScrollView BackgroundColor="#E4F3FF">
-        <Grid RowDefinitions="15*, 10*, 60*, 15*">
-            <Border
+    Title="To-Do List">
+
+    <Grid BackgroundColor="#e4f3ff" RowDefinitions="15*, 10*, 60*, 15*">
+        <Border
+            Grid.Row="0"
+            BackgroundColor="#90D5FF"
+            Stroke="Black">
+
+            <Label
                 Grid.Row="0"
-                BackgroundColor="#90D5FF"
-                Stroke="Black">
+                FontFamily="InstrumentSerifRegular"
+                FontSize="32"
+                HorizontalOptions="Center"
+                Text="TO-DO List"
+                TextColor="Black"
+                VerticalOptions="Center" />
+        </Border>
 
-                <Label
-                    Grid.Row="0"
-                    FontFamily="InstrumentSerifRegular"
-                    FontSize="32"
-                    HorizontalOptions="Center"
-                    Text="TO-DO List"
-                    TextColor="Black"
-                    VerticalOptions="Center" />
-            </Border>
+        <Border
+            Grid.Row="1"
+            BackgroundColor="#00B2EB"
+            Stroke="Black">
 
-            <Border
-                Grid.Row="1"
-                BackgroundColor="#00B2EB"
-                Stroke="Black">
+            <SearchBar
+                x:Name="taskSearchBar"
+                HorizontalOptions="Fill"
+                Placeholder="Search Task"
+                SearchButtonPressed="taskSearchBar_SearchButtonPressed"
+                TextChanged="taskSearchBar_TextChanged"
+                TextColor="Black" />
+        </Border>
 
-                <SearchBar
-                    x:Name="taskSearchBar"
-                    HorizontalOptions="Fill"
-                    Placeholder="Search Task"
-                    SearchButtonPressed="taskSearchBar_SearchButtonPressed"
-                    TextChanged="taskSearchBar_TextChanged"
-                    TextColor="Black" />
-            </Border>
+        <ListView
+            x:Name="taskList"
+            Grid.Row="2"
+            Margin="20,20,20,20"
+            RowHeight="100"
+            SeparatorColor="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Detail="{Binding description}"
+                        DetailColor="Black"
+                        Text="{Binding title}"
+                        TextColor="Black" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-            <ListView
-                x:Name="taskList"
-                Grid.Row="2"
-                Margin="20,20,20,20"
-                ItemsSource="{Binding Items}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell
-                            Detail="{Binding description}"
-                            DetailColor="Black"
-                            Text="{Binding title}"
-                            TextColor="Black" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <Border
-                Grid.Row="3"
-                BackgroundColor="#90D5FF"
-                Stroke="Black" />
-        </Grid>
-    </ScrollView>
+        <Border
+            Grid.Row="3"
+            BackgroundColor="#90D5FF"
+            Stroke="Black" />
+    </Grid>
 </ContentPage>

@@ -1,4 +1,5 @@
-using ToDoList.ViewModels;
+using System.Collections.ObjectModel;
+using ToDoList.Models;
 
 namespace ToDoList.Views;
 
@@ -8,7 +9,8 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 
-        taskList.BindingContext = new ToDoViewModel();
+        ObservableCollection<List> items = ListRepository.GetItems();
+        taskList.ItemsSource = items;
 	}
 
     private void taskSearchBar_SearchButtonPressed(object sender, EventArgs e)
