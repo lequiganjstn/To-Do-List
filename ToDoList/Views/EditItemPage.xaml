@@ -1,12 +1,78 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ToDoList.Views.EditItemPage"
-             Title="EditItemPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    x:Class="ToDoList.Views.EditItemPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Edit Task">
+
+    <Grid BackgroundColor="#e4f3ff" RowDefinitions="15*, 70*, 15*">
+        <Border
+            Grid.Row="0"
+            BackgroundColor="#90D5FF"
+            Stroke="Black">
+
+            <Label
+                Grid.Row="0"
+                FontFamily="InstrumentSerifRegular"
+                FontSize="32"
+                HorizontalOptions="Center"
+                Text="Edit Task"
+                TextColor="Black"
+                VerticalOptions="Center" />
+        </Border>
+
+        <Border
+            Grid.Row="1"
+            BackgroundColor="#e4f3ff"
+            Stroke="Black">
+
+            <VerticalStackLayout Margin="20,20,20,20">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Title:"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        WidthRequest="60" />
+                    <Entry
+                        x:Name="titleEntry"
+                        BackgroundColor="FloralWhite"
+                        TextColor="black"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Description:"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        WidthRequest="60" />
+                    <Entry
+                        x:Name="descriptionEntry"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <Button
+                    x:Name="SaveBtn"
+                    BackgroundColor="#00B2EB"
+                    BorderColor="Black"
+                    Clicked="SaveBtn_Clicked"
+                    Text="Save"
+                    TextColor="black" />
+
+                <Button
+                    x:Name="CancelBtn"
+                    BackgroundColor="#00B2EB"
+                    BorderColor="Black"
+                    Clicked="CancelBtn_Clicked"
+                    Text="Cancel"
+                    TextColor="black" />
+            </VerticalStackLayout>
+        </Border>
+
+        <Border
+            Grid.Row="2"
+            BackgroundColor="#90D5FF"
+            Stroke="Black" />
+    </Grid>
 </ContentPage>

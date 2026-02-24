@@ -22,4 +22,9 @@ public partial class MainPage : ContentPage
     {
 
     }
+
+    private async void taskList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        await Shell.Current.GoToAsync($"{nameof(EditItemPage)}?Id={((List) taskList.SelectedItem).id}");
+    }
 }

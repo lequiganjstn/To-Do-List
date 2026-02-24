@@ -39,6 +39,7 @@
             x:Name="taskList"
             Grid.Row="2"
             Margin="20,20,20,20"
+            ItemSelected="taskList_ItemSelected"
             RowHeight="100"
             SeparatorColor="Black">
             <ListView.ItemTemplate>
