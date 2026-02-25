@@ -11,16 +11,15 @@ public partial class EditItemPage : ContentPage
 	{
 		InitializeComponent();
 	}
-
-	public string itemId
-	{
-		set
-		{
-			item = ListRepository.GetItemById(int.Parse(value));
-			titleEntry.Text = item.title;
-			descriptionEntry.Text = item.description;
-		}
-	}
+    public string itemId
+    {
+        set
+        {
+            item = ListRepository.GetItemById(int.Parse(value));
+            titleEntry.Text = item.title;
+            descriptionEntry.Text = item.description;
+        }
+    }
 
     private void SaveBtn_Clicked(object sender, EventArgs e)
     {
@@ -28,6 +27,8 @@ public partial class EditItemPage : ContentPage
 		item.description = descriptionEntry.Text;
 
 		ListRepository.UpdateItem(item);
+
+        Shell.Current.GoToAsync("..");
     }
 
     private void CancelBtn_Clicked(object sender, EventArgs e)

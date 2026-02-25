@@ -28,5 +28,24 @@ namespace ToDoList.Models
             itemToUpdate.title = item.title;
             itemToUpdate.description = item.description;
         }
+
+        public static int GetMaxId()
+        {
+           return _items.Max(x => x.id) + 1;
+        }
+
+        public static void AddItem(List item)
+        {
+            int maxId = GetMaxId();
+
+            List newItem = new List()
+            {
+                id = maxId,
+                title = item.title,
+                description = item.description
+            };
+
+            _items.Add(newItem);
+        }
     }
 }

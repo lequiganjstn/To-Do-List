@@ -26,31 +26,29 @@
             BackgroundColor="#e4f3ff"
             Stroke="Black">
 
-            <VerticalStackLayout Margin="20,20,20,20">
-                <HorizontalStackLayout>
-                    <Label
-                        Text="Title:"
-                        TextColor="Black"
-                        VerticalOptions="Center"
-                        WidthRequest="60" />
-                    <Entry
-                        x:Name="titleEntry"
-                        BackgroundColor="FloralWhite"
-                        TextColor="black"
-                        VerticalOptions="Center" />
-                </HorizontalStackLayout>
+            <VerticalStackLayout Margin="20,20,20,10" Spacing="15">
 
-                <HorizontalStackLayout>
-                    <Label
-                        Text="Description:"
-                        TextColor="Black"
-                        VerticalOptions="Center"
-                        WidthRequest="60" />
-                    <Entry
-                        x:Name="descriptionEntry"
-                        TextColor="Black"
-                        VerticalOptions="Center" />
-                </HorizontalStackLayout>
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Title"
+                    TextColor="Black" />
+
+                <Entry
+                    x:Name="titleEntry"
+                    BackgroundColor="FloralWhite"
+                    HorizontalOptions="Fill"
+                    TextColor="black" />
+
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Description"
+                    TextColor="Black" />
+
+                <Entry
+                    x:Name="descriptionEntry"
+                    BackgroundColor="FloralWhite"
+                    HorizontalOptions="Fill"
+                    TextColor="Black" />
 
                 <Button
                     x:Name="SaveBtn"
