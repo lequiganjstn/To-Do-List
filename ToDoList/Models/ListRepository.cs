@@ -21,23 +21,6 @@ namespace ToDoList.Models
             return _items.FirstOrDefault(x => x.id == itemId);
         }
 
-        public static void UpdateItem(List item)
-        {
-            List itemToUpdate = GetItemById(item.id);
-
-            //itemToUpdate.title = item.title;
-            //itemToUpdate.description = item.description;
-
-            int index = _items.IndexOf(itemToUpdate);
-
-            _items[index] = item;
-        }
-
-        public static int GetMaxId()
-        {
-           return _items.Max(x => x.id) + 1;
-        }
-
         public static void AddItem(List item)
         {
             int maxId = GetMaxId();
@@ -50,6 +33,25 @@ namespace ToDoList.Models
             };
 
             _items.Add(newItem);
+        }
+
+        public static void UpdateItem(List item)
+        {
+            List itemToUpdate = GetItemById(item.id);
+
+            int index = _items.IndexOf(itemToUpdate);
+
+            _items[index] = item;
+        }
+
+        public static void DeleteItem(List item)
+        {
+            _items.Remove(item);
+        }
+
+        public static int GetMaxId()
+        {
+           return _items.Max(x => x.id) + 1;
         }
 
         public static List<List> GetSearchResults(String query)

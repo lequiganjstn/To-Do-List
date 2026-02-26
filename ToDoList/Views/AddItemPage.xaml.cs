@@ -4,21 +4,21 @@ namespace ToDoList.Views;
 
 public partial class AddItemPage : ContentPage
 {
-	public AddItemPage()
+    public AddItemPage()
 	{
 		InitializeComponent();
 	}
 
-    private List item;
-
-    private void SaveBtn_Clicked(object sender, EventArgs e)
+    private async void SaveBtn_Clicked(object sender, EventArgs e)
     {
-        item.title = titleEntry.Text;
-        item.description = descriptionEntry.Text;
+        ListRepository.AddItem(new List()
+        {
+            id = ListRepository.GetMaxId(),
+            title = titleEntry.Text,
+            description = descriptionEntry.Text
+        });
 
-        ListRepository.AddItem(item);
-
-        Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync("..");
     }
 
     private void CancelBtn_Clicked(object sender, EventArgs e)

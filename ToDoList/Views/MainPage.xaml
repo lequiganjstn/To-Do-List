@@ -48,7 +48,16 @@
                         Detail="{Binding description}"
                         DetailColor="Black"
                         Text="{Binding title}"
-                        TextColor="Black" />
+                        TextColor="Black">
+                        <TextCell.ContextActions>
+                            <MenuItem
+                                x:Name="delete"
+                                Clicked="delete_Clicked"
+                                CommandParameter="{Binding .}"
+                                IsDestructive="True"
+                                Text="Delete Task" />
+                        </TextCell.ContextActions>
+                    </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
