@@ -29,7 +29,6 @@
                 x:Name="taskSearchBar"
                 HorizontalOptions="Fill"
                 Placeholder="Search Task"
-                SearchButtonPressed="taskSearchBar_SearchButtonPressed"
                 TextChanged="taskSearchBar_TextChanged"
                 TextColor="Black" />
         </Border>
@@ -39,6 +38,7 @@
             Grid.Row="2"
             Margin="20,20,20,20"
             ItemSelected="taskList_ItemSelected"
+            ItemTapped="taskList_ItemTapped"
             RowHeight="60"
             SeparatorColor="Black"
             SeparatorVisibility="Default">

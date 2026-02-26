@@ -25,8 +25,12 @@ namespace ToDoList.Models
         {
             List itemToUpdate = GetItemById(item.id);
 
-            itemToUpdate.title = item.title;
-            itemToUpdate.description = item.description;
+            //itemToUpdate.title = item.title;
+            //itemToUpdate.description = item.description;
+
+            int index = _items.IndexOf(itemToUpdate);
+
+            _items[index] = item;
         }
 
         public static int GetMaxId()
@@ -46,6 +50,11 @@ namespace ToDoList.Models
             };
 
             _items.Add(newItem);
+        }
+
+        public static List<List> GetSearchResults(String query)
+        {
+            return _items.Where(x => x.title.Contains(query, StringComparison.OrdinalIgnoreCase))?.ToList();
         }
     }
 }

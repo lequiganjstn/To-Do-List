@@ -15,27 +15,32 @@ public partial class MainPage : ContentPage
     {
         base.OnAppearing();
 
-        ObservableCollection<List> items = ListRepository.GetItems();
+        taskSearchBar.Text = String.Empty;
+        ObservableCollection<List> items = new ObservableCollection<List>(ListRepository.GetItems());
         taskList.ItemsSource = items;
-    }
-
-    private void taskSearchBar_SearchButtonPressed(object sender, EventArgs e)
-    {
-
     }
 
     private void taskSearchBar_TextChanged(object sender, TextChangedEventArgs e)
     {
-
+        SearchBar searchBar = (SearchBar)sender;
+        taskList.ItemsSource = new ObservableCollection<List>(ListRepository.GetSearchResults(searchBar.Text));
     }
 
     private async void taskList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
-        await Shell.Current.GoToAsync($"{nameof(EditItemPage)}?Id={((List) taskList.SelectedItem).id}");
+        if (taskList.SelectedItem != null)
+        {
+            await Shell.Current.GoToAsync($"{nameof(EditItemPage)}?Id={((List)taskList.SelectedItem).id}");
+        }
     }
 
     private async void AddBtn_Clicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(AddItemPage));
+    }
+
+    private void taskList_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        taskList.SelectedItem = null;
     }
 }
