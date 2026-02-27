@@ -13,7 +13,7 @@
             <Label
                 Grid.Row="0"
                 FontFamily="InstrumentSerifRegular"
-                FontSize="32"
+                FontSize="48"
                 HorizontalOptions="Center"
                 Text="Add Task"
                 TextColor="Black"

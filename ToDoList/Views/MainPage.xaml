@@ -13,7 +13,7 @@
 
             <Label
                 FontFamily="InstrumentSerifRegular"
-                FontSize="32"
+                FontSize="48"
                 HorizontalOptions="Center"
                 Text="TO-DO List"
                 TextColor="Black"
@@ -22,15 +22,19 @@
 
         <Border
             Grid.Row="1"
+            Padding="0,0,20,0"
             BackgroundColor="#00B2EB"
             Stroke="Black">
 
             <SearchBar
                 x:Name="taskSearchBar"
-                HorizontalOptions="Fill"
+                CancelButtonColor="Black"
+                HorizontalOptions="Center"
                 Placeholder="Search Task"
+                SearchIconColor="Black"
                 TextChanged="taskSearchBar_TextChanged"
-                TextColor="Black" />
+                TextColor="Black"
+                VerticalOptions="Center" />
         </Border>
 
         <ListView
@@ -68,6 +72,7 @@
             Margin="0,0,40,40"
             BackgroundColor="#00B2EB"
             BorderColor="black"
+            BorderWidth="1"
             Clicked="AddBtn_Clicked"
             CornerRadius="100"
             FontSize="48"
