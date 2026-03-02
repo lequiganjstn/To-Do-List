@@ -22,14 +22,14 @@
 
         <Border
             Grid.Row="1"
-            Padding="0,0,20,0"
+            Padding="20,0,20,0"
             BackgroundColor="#00B2EB"
             Stroke="Black">
 
             <SearchBar
                 x:Name="taskSearchBar"
                 CancelButtonColor="Black"
-                HorizontalOptions="Center"
+                HorizontalOptions="Fill"
                 Placeholder="Search Task"
                 SearchIconColor="Black"
                 TextChanged="taskSearchBar_TextChanged"
